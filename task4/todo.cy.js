@@ -1,13 +1,13 @@
-/// <reference types="cypress" />
+//// <reference types="cypress" />
 
 describe('The Internet functionality tests', () => {
   beforeEach(() => {
     cy.visit('https://the-internet.herokuapp.com/');
   });
 
-  it('.checkHeading() - проверить заголовок на главной странице', () => {
+  it('.checkHeading() - проверить заголовок', () => {
     cy.get('h1').should('contain', 'Welcome to the-internet');
-    cy.get('h2').should('exist'); // Проверка наличия заголовка h2
+    cy.get('h2').should('exist'); // Проверка наличия заголовка
     cy.getCookies().then((cookies) => {
       expect(cookies).to.have.length.above(0); // Проверка наличия cookies
       cookies.forEach(cookie => {
